@@ -2,6 +2,7 @@ import React from 'react';
 import fetch from 'isomorphic-unfetch';
 import Error from 'next/error';
 import { endpoint } from '../config';
+import Layout from '../components/Layout';
 import PostList from '../components/PostList';
 
 class Index extends React.Component {
@@ -22,10 +23,9 @@ class Index extends React.Component {
       return <Error statusCode={503} />
     }
     return (
-      <>
-        <h1>Hacker Next</h1>
+      <Layout title='Hacker Next' description='News'>
         <PostList posts={posts} />
-      </>
+      </Layout>
     )
   }
 }
