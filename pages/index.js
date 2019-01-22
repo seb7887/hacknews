@@ -2,6 +2,7 @@ import React from 'react';
 import fetch from 'isomorphic-unfetch';
 import Error from 'next/error';
 import { endpoint } from '../config';
+import PostList from '../components/PostList';
 
 class Index extends React.Component {
   static async getInitialProps() {
@@ -23,11 +24,7 @@ class Index extends React.Component {
     return (
       <>
         <h1>Hacker Next</h1>
-        <div>
-          { posts.map(post => (
-            <h2 key={post.id}>{post.title}</h2>
-          ))}
-        </div>
+        <PostList posts={posts} />
       </>
     )
   }
