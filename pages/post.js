@@ -4,6 +4,7 @@ import fetch from 'isomorphic-unfetch';
 import Layout from '../components/Layout';
 import Error from 'next/error';
 import { endpoint } from '../config';
+import CommentList from '../components/CommentList';
 
 const Main = styled.main`
   padding: 1em;
@@ -70,6 +71,12 @@ class Post extends React.Component {
             <strong>{post.comments_count} comments</strong>
             <strong>{post.time_ago}</strong>
           </div>
+
+          { post.comments.length > 0 ? (
+            <CommentList comments={post.comments} />
+          ) : (
+            <div>No Comments</div>
+          )}
         </Main>
       </Layout>
     );
