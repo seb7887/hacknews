@@ -1,1 +1,1 @@
-export const endpoint = 'https://node-hnapi.herokuapp.com/news?page=1';
+export const endpoint = 'https://node-hnapi.herokuapp.com/news?page=';
