@@ -25,7 +25,7 @@ class Index extends React.Component {
 
     try {
       page = parseInt(query.page || 1);
-      const res = await fetch(`${endpoint}${page}`);
+      const res = await fetch(`${endpoint}/news?page=${page}`);
       posts = await res.json();
     } catch (err) {
       console.log(err);
