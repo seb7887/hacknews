@@ -1,0 +1,14 @@
+{
+  "name": "hacknews",
+  "short_name": "hacknews",
+  "lang": "es-ES",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#ff6600",
+  "icons": [
+    {
+      "src": "/static/icon.png",
+      "sizes": "512x512"
+    }
+  ]
+}

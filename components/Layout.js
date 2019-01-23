@@ -54,10 +54,7 @@ const Layout = ({ title, description, children, backButton }) => (
   <Div>
     <Head>
       <title>{title}</title>
-      <meta charSet='utf-8' />
       <meta name='description' content={description} />
-      <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-      <meta name="theme-color" content="#ff6600" />
     </Head>
 
     <GlobalStyle />

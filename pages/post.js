@@ -63,7 +63,7 @@ class Post extends React.Component {
     if (typeof post === 'undefined' || !post) return <Error statusCode={503} />;
 
     return (
-      <Layout title={post.title} backButton={true}>
+      <Layout title={post.title} description='News' backButton={true}>
         <Main>
           <h1><a href={post.url}>{post.title}</a></h1>
           <div className='postDetails'>
