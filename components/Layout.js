@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Router from 'next/router';
 import PropTypes from 'prop-types';
 import styled, { createGlobalStyle } from 'styled-components';
 
@@ -32,6 +33,12 @@ const Div = styled.div`
       display: inline-block;
       padding: 1em;
     }
+s
+    .back-button {
+      font-size: 0.9em;
+      padding-right: 1em;
+      cursor: pointer;
+    }
   }
 `;
 
@@ -43,7 +50,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const Layout = ({ title, description, children }) => (
+const Layout = ({ title, description, children, backButton }) => (
   <Div>
     <Head>
       <title>{title}</title>
@@ -57,8 +64,9 @@ const Layout = ({ title, description, children }) => (
 
     <div className='container'>
       <nav>
+        { backButton && <span onClick={() => Router.back()} className='back-button'>&#x2b05;</span>}
         <Link href='/'>
-          <a><span className='back'>&lt;</span><span className='title'>Hacker Next</span></a>
+          <a><span className='title'>Hacker Next</span></a>
         </Link>
       </nav>
       {children}

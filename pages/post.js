@@ -30,7 +30,7 @@ const Main = styled.main`
     padding-bottom: 1em;
     border-bottom: 1px solid rgba(0,0,0,0.2);
     margin-bottom: 1em;
-
+s
     strong {
       margin-right: 1em;
     }
@@ -63,7 +63,7 @@ class Post extends React.Component {
     if (typeof post === 'undefined' || !post) return <Error statusCode={503} />;
 
     return (
-      <Layout title={post.title}>
+      <Layout title={post.title} backButton={true}>
         <Main>
           <h1><a href={post.url}>{post.title}</a></h1>
           <div className='postDetails'>
