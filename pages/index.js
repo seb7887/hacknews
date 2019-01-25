@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import fetch from 'isomorphic-unfetch';
 import Error from 'next/error';
 import Link from 'next/link';
-import { endpoint } from '../config';
+import { endpoint, serviceWorker } from '../config';
 import Layout from '../components/Layout';
 import PostList from '../components/PostList';
 
@@ -31,6 +31,19 @@ class Index extends React.Component {
       console.log(err);
     }
     return { posts, page };
+  }
+
+  componentDidMount() {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register(serviceWorker)
+        .then(registration => {
+          console.log('Registration successful', registration);
+        })
+        .catch(err => {
+          console.warn('Service Worker registration failed', err.message);
+        })
+    }
   }
 
   render() {
